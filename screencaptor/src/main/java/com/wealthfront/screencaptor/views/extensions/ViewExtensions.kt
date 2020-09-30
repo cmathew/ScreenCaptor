@@ -1,5 +1,6 @@
 package com.wealthfront.screencaptor.views.extensions
 
+import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ fun View.getAllChildren(): List<View> {
 
 fun View.getViewResourceName(): String {
   return try {
+    @SuppressLint("ResourceType")
     if (resources != null && id > 0) {
       resources.getResourceName(id)
     } else {
